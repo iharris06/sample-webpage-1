@@ -7,7 +7,7 @@
     "bootstrap": "^4.4.1",
     "bufferutil": "^4.0.1",
     "canvas": "^2.6.1",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
