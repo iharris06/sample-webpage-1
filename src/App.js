@@ -6,11 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>
-            Welcome to my site! Explore my <code>Projects</code> page to see what I've been working on.
-          </p>
-        </header>
+        {/* <header className="App-header">
+        </header> */}
         <body>
         <nav class="navbar">
             <div class="brand-title">Ian Harris</div>
@@ -28,6 +25,8 @@ class App extends Component {
               </ul>
             </div>
           </nav>
+          <p>Welcome to my site! </p>
+            <p>Explore my <code>Projects</code> page to see what I've been working on.</p>
           <img src={logo} className="App-logo" alt="logo" />
         </body>
       </div>
