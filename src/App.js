@@ -12,14 +12,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar>
-            <Navbar.Brand className="brand-title">Ian Harris</Navbar.Brand>            
+        <Navbar collapseOnSelect="true" expand="md" bg="light">
+            <Navbar.Brand className="brand-title">Ian Harris</Navbar.Brand>    
+            <Navbar.Toggle aria-controls="responsive-navbar-nav"/>        
+            <Navbar.Collapse className="mr-auto">
             <Nav className="nav-links">  
                 <Nav.Link><Link to="/">Home</Link></Nav.Link>
                 <Nav.Link><Link to="/projects">Projects</Link></Nav.Link>
                 <Nav.Link><Link to="/about">About</Link></Nav.Link>
                 <Nav.Link><Link to="/contact">Contact</Link></Nav.Link>
             </Nav>
+            </Navbar.Collapse>
         </Navbar>
         
         <Route exact= {true} path="/" component={Home}/>
