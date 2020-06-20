@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Link, Route} from 'react-router-dom';
+import Projects from './components/Projects';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-        </header> */}
-        <body>
-        <nav class="navbar">
-            <div class="brand-title">Ian Harris</div>
-            <a href="#" class="toggle-button">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </a>
-            <div class="nav-links"> 
-              <ul>  
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-          </nav>
-          <p>Welcome to my site! </p>
-            <p>Explore my <code>Projects</code> page to see what I've been working on.</p>
-          <img src={logo} className="App-logo" alt="logo" />
-        </body>
+        <Navbar collapseOnSelect="true" expand="md" bg="light">
+            <Navbar.Brand className="brand-title">Ian Harris</Navbar.Brand>    
+            <Navbar.Toggle aria-controls="responsive-navbar-nav"/>        
+            <Navbar.Collapse className="mr-auto">
+            <Nav className="nav-links">  
+                <Nav.Link><Link to="/">Home</Link></Nav.Link>
+                <Nav.Link><Link to="/projects">Projects</Link></Nav.Link>
+                <Nav.Link><Link to="/about">About</Link></Nav.Link>
+                <Nav.Link><Link to="/contact">Contact</Link></Nav.Link>
+            </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+        
+        <Route exact= {true} path="/" component={Home}/>
+        <Route path="/projects" component={Projects}/>
+        <Route path="/about" component={About}/>
+        <Route path="/contact" component={Contact}/>
+        <Route path="/:id" render = {()=> (<p> This page is currently under construction. Remember, be safe and wear a face mask. </p>)}/>
       </div>
     );
   }
