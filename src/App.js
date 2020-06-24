@@ -13,7 +13,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar collapseOnSelect="true" expand="md" bg="light">
-            <Navbar.Brand className="brand-title">Ian Harris</Navbar.Brand>    
+            <Navbar.Brand>
+              <Link to="/" className="brand-title" style={{ textDecoration: 'none', color:'rgba(0, 0, 0, 0.9)' }}>Ian Harris</Link>
+            </Navbar.Brand>    
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>        
             <Navbar.Collapse className="mr-auto">
             <Nav className="nav-links">  
