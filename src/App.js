@@ -12,17 +12,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar collapseOnSelect="true" expand="md" bg="light">
+        <Navbar collapseOnSelect expand="md" bg="light">
             <Navbar.Brand>
               <Link to="/" className="brand-title" style={{ textDecoration: 'none', color:'rgba(0, 0, 0, 0.9)' }}>Ian Harris</Link>
             </Navbar.Brand>    
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>        
             <Navbar.Collapse className="mr-auto">
             <Nav className="nav-links">  
-                <Nav.Link><Link to="/">Home</Link></Nav.Link>
-                <Nav.Link><Link to="/projects">Projects</Link></Nav.Link>
-                <Nav.Link><Link to="/about">About</Link></Nav.Link>
-                <Nav.Link><Link to="/contact">Contact</Link></Nav.Link>
+                <Nav.Link eventKey="1"><Link to="/">Home</Link></Nav.Link>
+                <Nav.Link eventKey="2"><Link to="/projects">Projects</Link></Nav.Link>
+                <Nav.Link eventKey="3"><Link to="/about">About</Link></Nav.Link>
+                <Nav.Link eventKey="4"><Link to="/contact">Contact</Link></Nav.Link>
             </Nav>
             </Navbar.Collapse>
         </Navbar>
