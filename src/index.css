@@ -48,3 +48,31 @@ code {
   color: rgba(0, 0, 0, 0.9);
 }
 
+.emailForm{
+margin-left:15rem;
+margin-right:15rem;
+margin-top:5rem;
+margin-bottom:5rem;
+}
+
+.emailForm-md{
+margin-left:5rem;
+margin-right:5rem;
+margin-top:5rem;
+margin-bottom:5rem;
+}
+
+.emailForm-sm {
+  margin-left:2rem;
+  margin-right:2rem;
+  margin-top:2rem;
+  margin-bottom:2rem;
+  }
+
+.emailFormSubmit input{ 
+  background-color:whitesmoke;
+  width:10rem;
+  text-align: center;
+}
+
+
