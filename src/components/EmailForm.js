@@ -5,18 +5,16 @@ class EmailForm extends Component {
     constructor(){
         super();
         this.state={
-            email:"er@at.com",
-            subject:"subject",
-            message:"message"        
+            email:'',
+            message:''       
         }
-        this.handleChange = this.handleEmailChange.bind(this);
-        this.handleChange = this.handleSubjectChange.bind(this);
-        this.handleChange = this.handleMessageChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleMessageChange = this.handleMessageChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleEmailChange(event){
-        this.setState({email: event.target.email})
+        this.setState({email: event.target.value})
     }
 
     handleSubjectChange(event){
@@ -24,11 +22,11 @@ class EmailForm extends Component {
     }
 
     handleMessageChange(event){
-        this.setState({message: event.target.message})
+        this.setState({message: event.target.value})
     }
 
     handleSubmit(event){
-        alert('Email submitted successfully!');
+        alert('Email submitted successfully from ' + this.state.email);
         event.preventDefault();
     }
 
@@ -41,14 +39,14 @@ class EmailForm extends Component {
                     <Form>
                         <Form.Group controlId="emailForm.emailInput" as={Form.Row}>
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="be@peace.com"/>
+                            <Form.Control type="email" placeholder="be@peace.com" email={this.state.email} onChange={this.handleEmailChange}/>
                         </Form.Group>
                         <Form.Group controlId="emailForm.messageTextArea">
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows="10"/>
+                            <Form.Control as="textarea" rows="10" email={this.state.message} onChange={this.handleMessageChange}/>
                         </Form.Group>
                         <Form.Group className="emailFormSubmit"  controlId="emailForm.submitInput">
-                            <Form.Control type="submit" value="Submit"/>
+                            <Form.Control type="submit" value="Submit" onSumbit={this.handleSubmit}/>
                         </Form.Group>
                     </Form>
                     </div>
