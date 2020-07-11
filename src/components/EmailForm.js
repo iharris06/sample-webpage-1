@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {Form} from 'react-bootstrap'
+import {Form, Container} from 'react-bootstrap'
 
 class EmailForm extends Component {
     constructor(){
@@ -34,19 +34,28 @@ class EmailForm extends Component {
 
     render(){
         return(
-            <Form className="emailForm">
-                <Form.Group controlId="emailForm.emailInput" as={Form.Row}>
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="be@peace.com"/>
-                </Form.Group>
-                <Form.Group controlId="emailForm.messageTextArea">
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control as="textarea" rows="10"/>
-                </Form.Group>
-                <Form.Group className="emailFormSubmit"  controlId="emailForm.submitInput">
-                    <Form.Control type="submit" value="Submit"/>
-                </Form.Group>
-            </Form>
+            <Container >
+                <div class="row">
+                    <div class="col-lg-2 col-md-1"></div>
+                    <div class="col-lg-8 col-md emailForm">
+                    <Form>
+                        <Form.Group controlId="emailForm.emailInput" as={Form.Row}>
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" placeholder="be@peace.com"/>
+                        </Form.Group>
+                        <Form.Group controlId="emailForm.messageTextArea">
+                            <Form.Label>Message</Form.Label>
+                            <Form.Control as="textarea" rows="10"/>
+                        </Form.Group>
+                        <Form.Group className="emailFormSubmit"  controlId="emailForm.submitInput">
+                            <Form.Control type="submit" value="Submit"/>
+                        </Form.Group>
+                    </Form>
+                    </div>
+                    <div class="col-lg-2 col-md-1"></div>
+                </div>
+            
+            </Container>
         );
     }
 }

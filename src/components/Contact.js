@@ -10,7 +10,7 @@ render(){
         <p>
             {Constants.EMAIL_FORM_MESSAGE}
         </p>
-        <EmailForm/>
+        <EmailForm />
         </div>
         /* TODO
             Have contact form:
