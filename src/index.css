@@ -62,4 +62,11 @@ code {
   text-align: center;
 }
 
+.emailFormSubmitDisabled input{ 
+  background-color:red;
+  width: 10rem;
+  margin: auto;
+  text-align: center;
+}
+
 
