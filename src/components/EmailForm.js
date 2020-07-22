@@ -38,7 +38,7 @@ class EmailForm extends Component {
         } else{
             alert('Please verify that you are a human.');
         }
-        
+
         event.preventDefault();
     }
 
