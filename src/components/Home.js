@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import logo from '../logo.svg';
+import logo from '../images/computer-dark.jpg';
 import {Link} from 'react-router-dom';
 
 class Home extends Component {

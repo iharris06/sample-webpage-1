@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import ProjectDetails from './ProjectDetails';
 
 class Projects extends Component {
     constructor(props){
         super(props);
 
         this.state={
-            projectList:[{'name':'ian', 'id':'2'},{'name':'michelle', 'id':'1'}]
+            projectList:[{'name':'ian', 'id':'2'},{'name':'michelle', 'id':'1'}],
+            message: null
         }
     }
 
@@ -17,7 +19,11 @@ class Projects extends Component {
 getGithubRepos(){
     let newData = fetch("https://api.github.com/users/iharris06/repos")
   .then(response => response.json())
-  .then(data => this.setState({projectList:data}));
+  .then(data => this.setState({
+      projectList:data,
+      message: 'success'
+    }))
+  .catch(err =>{this.setState({message:err})});
 }
 
 
@@ -27,16 +33,17 @@ getGithubRepos(){
                 <div className="row">
                     <div className="col-md-12">
                         <h2>Projects</h2>
-                        <div>
-                            {this.state.projectList.map(project => {
-                                return (
-                                    <div className="col-md-12">
-                                        <a key={project.id} href={project.html_url}>{project.name}</a>
-                                    </div>
-                                )
-                            })
-                            }
-                        </div>
+                        {this.state.projectList.map(project => {
+                            return (
+                                <ProjectDetails 
+                                    name={project.name}
+                                    description={project.description}
+                                    url={project.html_url}
+                                    key={project.id}
+                                />
+                            )
+                        })
+                        }
                     </div>
                 </div>
             </div>

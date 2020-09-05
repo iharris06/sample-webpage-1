@@ -30,6 +30,7 @@ class App extends Component {
         
         <Route exact= {true} path="/" component={Home}/>
         <Route path="/projects" component={Projects}/>
+        <Route exact path="/projects/:projectId" component={Projects}/>
         <Route path="/about" component={About}/>
         <Route path="/contact" component={Contact}/>
         <Route path="/:id" render = {()=> (<p> This page is currently under construction. Remember, be safe and wear a face mask. </p>)}/>
