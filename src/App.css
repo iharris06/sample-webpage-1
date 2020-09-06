@@ -26,3 +26,18 @@ img.banner {
 .link-text-dark{
   color:rgb(54, 215, 183);
 }
+
+.project-tile{
+    box-shadow: 0 4px 8px 0 rgba(100, 100, 100, 0.2), 0 6px 20px 0 rgba(100, 100, 100, 0.19);
+    height: 10rem;
+    text-align: center;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+.project-tile:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 10rem;
+    text-align: center;
+    margin: 15px;
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 
 
 
-class ProjectDetails extends Component {
+class projectTile
+ extends Component {
     constructor(props){
         super(props);
         this.state={
@@ -16,8 +16,8 @@ class ProjectDetails extends Component {
 
     render(){
         return(
-                <div className='col-md-4'>
-                    <h1>{this.state.name}</h1>
+                <div className='col-lg-4 col-md-8 col-sm-10 project-tile'>
+                    <h2>{this.state.name}</h2>
                     <p>{this.state.description}</p>
                     <a href={this.state.url}>Github</a>
                 </div>
@@ -26,4 +26,5 @@ class ProjectDetails extends Component {
 
 }
 
-export default ProjectDetails;
+export default projectTile
+;
