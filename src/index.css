@@ -45,5 +45,28 @@ code {
   font-family: 'Rock Salt', cursive;
   font-size: 2rem;
   margin: .5rem;
+  color: rgba(0, 0, 0, 0.9);
 }
+
+.emailForm{
+  margin-top: 2rem;
+  margin-bottom:2rem;
+}
+
+
+
+.emailFormSubmit input{ 
+  background-color:whitesmoke;
+  width: 10rem;
+  margin: auto;
+  text-align: center;
+}
+
+.emailFormSubmitDisabled input{ 
+  background-color:red;
+  width: 10rem;
+  margin: auto;
+  text-align: center;
+}
+
 
