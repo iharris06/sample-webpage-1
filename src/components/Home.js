@@ -6,13 +6,15 @@ import {Link} from 'react-router-dom';
 class Home extends Component {
 render(){
     return(
-        <div className="banner">
-            <div className="home-text">
-                <h2>Welcome to my site! </h2>
-                <p>Explore my <Link to="/projects" className="link-text-dark">Projects</Link> page to see what I've been working on.</p>
+        <div className="Color">
+            <div className="banner">
+                <div className="home-text">
+                    <h2>Welcome to my site! </h2>
+                    <p>Explore my <Link to="/projects" className="link-text-dark">Projects</Link> page to see what I've been working on.</p>
+                </div>
+                <img src={banner} className="banner" alt="computer" />
+                
             </div>
-            <img src={banner} className="banner" alt="computer image" />
-            
         </div>
     )
 }

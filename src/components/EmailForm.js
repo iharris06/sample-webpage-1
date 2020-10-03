@@ -8,9 +8,11 @@ class EmailForm extends Component {
         super();
         this.state={
             email:'',
-            message:'',
+            emailMessage:'',
             recaptchaReady: false,
-            formReady: false       
+            formReady: false,
+            error: false,
+            message: null   
         }
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handleMessageChange = this.handleMessageChange.bind(this);
@@ -33,13 +35,15 @@ class EmailForm extends Component {
     }
 
     handleSubmit(event){
-       if( this.Recaptcha.execute()){
-            alert('Email submitted successfully from ' + this.state.email);    
-        } else{
-            alert('Please verify that you are a human.');
-        }
-
         event.preventDefault();
+
+    //    if( this.Recaptcha.execute()){
+            alert('Email submitted successfully from ' + this.state.email);    
+        // } else{
+            // alert('Please verify that you are a human.');
+        // }
+
+        
     }
 
     recaptchaLoaded(){
@@ -47,12 +51,18 @@ class EmailForm extends Component {
     }
 
     onResolved(){
-        this.setState({isVerified:true})
-        console.log(this.state)
+        this.setState({isVerified:true});
+        this.recaptcha.getResponse();
+    }
+
+    onRecaptchaError(){
+        this.setState({
+            error: true,
+            message:'Recaptcha encountered an error.'});
     }
 
     verifyForm(){
-        if(this.state.recaptchaReady && this.state.message && this.state.email){
+        if(this.state.recaptchaReady && this.state.emailMessage && this.state.email){
             this.setState({formReady:true})
         } else{
             this.setState({formReady:false})
@@ -80,7 +90,7 @@ class EmailForm extends Component {
                         </Form.Group>
                         <Form.Group controlId="emailForm.messageTextArea">
                             <Form.Label>Message</Form.Label>
-                            <Form.Control as="textarea" rows="10" email={this.state.message} onChange={this.handleMessageChange}/>
+                            <Form.Control as="textarea" rows="10" email={this.state.emailMessage} onChange={this.handleMessageChange}/>
                         </Form.Group>
                         <Form.Group  className="emailFormSubmit"  controlId="emailForm.submitInput" >
                             <Form.Control type="submit" value="Submit"/>
@@ -89,6 +99,7 @@ class EmailForm extends Component {
                                 sitekey={Constants.RECAPTCHAV3_SITE_KEY}
                                 onResolved ={this.onResolved}
                                 onLoaded={this.recaptchaLoaded}
+                                onError= {this.onRecaptchaError}
                             />
                         </Form.Group>
                     </Form>

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import resume from '../images/Ian Harris Resume.png';
 
 class About extends Component {
 render(){
     return(
-        <h2>About</h2>
-        /* TODO
-            Include resume and desciption of my experience and who I am.
-        */
+        <div className="container">
+            <h2>About</h2>
+            <img src={resume} className="resume-doc" alt="resume" />
+       </div>
     )
 }
 }
