@@ -4,7 +4,6 @@ import { Container } from 'react-bootstrap';
 
 class Projects extends Component {
     constructor(props){
-        super(props);
 
         this.state={
             projectList:[{'name':'ian', 'id':'2'},{'name':'michelle', 'id':'1'}],
